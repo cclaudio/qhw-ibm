@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qhw-ibm"
+version = "0.1.0"
+description = "IBM Quantum Platform normalizers for provider-neutral quantum hardware data schemas"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "qhw-data>=0.1.0",
+]
+
+[project.scripts]
+qhw-ibm-device = "qhw_ibm.cli:device_main"
+qhw-ibm-coupling = "qhw_ibm.cli:coupling_main"
+qhw-ibm-calibration = "qhw_ibm.cli:calibration_main"
+qhw-ibm-result = "qhw_ibm.cli:result_main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
